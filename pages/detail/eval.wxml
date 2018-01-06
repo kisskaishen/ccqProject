@@ -1,0 +1,48 @@
+<!--pages/detail/eval.wxml-->
+<view class='container'>
+    <view class='header'>
+        <view data-num='1' class="{{_num==1?'curr':''}}" bindtap="headerClick">
+            <view>全部</view>
+            <view>{{evalInfo.goods_eva}}</view>
+        </view>
+
+        <view data-num='2' class="{{_num==2?'curr':''}}" bindtap="headerClick">
+            <view>好评</view>
+            <view>{{evalInfo.eva_goods}}</view>
+        </view>
+        <view data-num='3' class="{{_num==3?'curr':''}}" bindtap="headerClick">
+            <view>中评</view>
+            <view>{{evalInfo.eva_posi}}</view>
+        </view>
+        <view data-num='4' class="{{_num==4?'curr':''}}" bindtap="headerClick">
+            <view>差评</view>
+            <view>{{evalInfo.eva_bad}}</view>
+        </view>
+        <view data-num='5' class="{{_num==5?'curr':''}}" bindtap="headerClick">
+            <view>已回复</view>
+            <view>{{evalInfo.eva_rep}}</view>
+        </view>
+    </view>
+    <view class='body'>
+        <view class='list' wx:for="{{list}}" wx:key="{{item.geval_orderid}}">
+            <view class='listTitle'>
+                <view>
+                    <image src='/image/eval.png' class='icon'></image>
+                </view>
+                <view style='margin:0 40rpx 0 20rpx;'>{{item.geval_frommembername}}</view>
+                <view>
+                    <block wx:for="{{5}}" wx:key="{{item.geval_scores}}">
+                        <image src="/image/star.png" style='width:24rpx;height:24rpx;'></image>
+                    </block>
+                </view>
+            </view>
+            <view>
+                <view>评价：</view>
+                <view>{{item.geval_content}}</view>
+                <view>
+                    <image src='{{item.goods_image}}' class='goodsImg'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

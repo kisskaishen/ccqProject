@@ -1,0 +1,44 @@
+<!--pages/order/moreDetail.wxml-->
+<view class='container'>
+    <view class='content'>
+        <view class='header'>
+            <navigator url='/pages/detail/store?store_id={{orderInfo.store_id}}'>
+                <view class='headerFl'>
+                    <image src='{{orderInfo.image}}'></image>
+                </view>
+                <view class='headerFr'>
+                    <view>{{orderInfo.goods_name}}</view>
+                    <view>*{{orderInfo.goods_num}}</view>
+                    <view>￥{{orderInfo.goods_price}}</view>
+                </view>
+            </navigator>
+        </view>
+        <view class='body'>
+            <view>{{orderInfo.goods_name}}</view>
+            <view>验证码：{{orderInfo.check_number}}</view>
+            <view>
+                <image src='{{orderInfo.check_number_img}}'></image>
+            </view>
+        </view>
+        <view class='store'>
+            <view class='storeTitle'>商家信息</view>
+            <view class='storeBody'>
+                <view class='storeBodyImg'>
+                    <image src='{{orderInfo.store.store_img}}'></image>
+                </view>
+                <view class='storeBodyContent'>
+                    <view>{{orderInfo.store.store_name}}</view>
+                    <text>{{orderInfo.store.store_address}}</text>
+                </view>
+                <view class='storeBodyImg storeBodyImgTel'>
+                    <image src='/image/orderTel.png'></image>
+                </view>
+            </view>
+            <view class='storeOther'>订单号：{{orderInfo.order_sn}}</view>
+            <view class='storeOther'>购买账号：{{orderInfo.buyer_name}}</view>
+            <view class='storeOther'>购买时间：{{orderInfo.payment_time}}</view>
+            <view class='storeOther'>数量：{{orderInfo.goods_num}}</view>
+            <view class='storeOther'>总价：{{orderInfo.goods_amount}}</view>
+        </view>
+    </view>
+</view>

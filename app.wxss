@@ -1,0 +1,72 @@
+/**app.wxss**/
+
+page {
+    display: block;
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.icon {
+    display: inline-block;
+    width: 60rpx;
+    height: 60rpx;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.littleIcon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.addressIcon {
+    width: 26rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.starIcon {
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.goodsPhoto {
+    width: 100%;
+    height: 400rpx;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: show;
+}
+
+.dian {
+    background-color: #f39801;
+    color: #fff;
+    padding: 0 4rpx;
+    margin-right: 20rpx;
+    border-radius: 4rpx;
+}
+.tui {
+    background-color: #d81e06;
+    color: #fff;
+    padding: 0 4rpx;
+    margin-right: 20rpx;
+    border-radius: 4rpx;
+}

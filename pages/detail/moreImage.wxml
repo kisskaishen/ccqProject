@@ -1,0 +1,21 @@
+<!--pages/detail/moreImage.wxml-->
+<view class='container'>
+    <view class='list'>
+        <view>商家外部环境图：</view>
+        <view>
+            <image wx:for='{{outList}}' wx:key="{{item}}" src='{{item}}'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <view>商家内部境图：</view>
+        <view>
+            <image wx:for='{{inList}}' wx:key="{{item}}" src='{{item}}'></image>
+        </view>
+    </view>
+    <view class='list other'>
+        <view>资质/荣誉：</view>
+        <view>
+            <image wx:for='{{otherList}}' wx:key="{{item}}" src='{{item}}'></image>
+        </view>
+    </view>
+</view>

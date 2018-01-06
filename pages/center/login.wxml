@@ -1,0 +1,33 @@
+<!--pages/center/login.wxml-->
+<view class='container'>
+    <view class='header'>
+        <view data-num='1' class="{{_num == 1?'curr':''}}" bindtap='changeNum'>账号密码登录</view>
+        <view data-num='2' class="{{_num == 2?'curr':''}}" bindtap='changeNum'>手机短信登录</view>
+    </view>
+    <view class='login' wx:if="{{_num==1}}">
+        <view>
+            <view>账号</view>
+            <input placeholder='请输入账号' focus bindblur='memberNameChange'></input>
+        </view>
+        <view>
+            <view>密码</view>
+            <input password='true' placeholder='请输入密码' bindinput='memberPwdChange'></input>
+        </view>
+    </view>
+    <view class='login' wx:if="{{_num==2}}">
+        <view>
+            <view>手机号码</view>
+            <input type='number' placeholder='请输入账号' bindblur='memberNameChange'></input>
+        </view>
+        <view>
+            <view>验证码</view>
+            <input type='number' placeholder='请输入验证码' bindinput='memberPwdChange'></input>
+            <button size='mini' bindtap='sendCode'>获取验证码</button>
+        </view>
+    </view>
+
+    <view class='loginBtn'>
+        <button bindtap='loginBtn'>确定</button>
+    </view>
+
+</view>

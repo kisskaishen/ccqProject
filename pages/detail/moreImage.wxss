@@ -1,0 +1,41 @@
+/* pages/detail/moreImage.wxss */
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list > view {
+    line-height: 60rpx;
+    font-size: 30rpx;
+    color: #333;
+    padding: 0 30rpx;
+}
+
+.list > view  image {
+    display: inline-block;
+    width: 220rpx;
+    height: 178rpx;
+    margin-right: 14rpx;
+    box-sizing: border-box;
+}
+
+.list > view  image:nth-child(3n) {
+    margin-right: 0;
+}
+
+.other > view image {
+    display: inline-block;
+    margin-right: 42rpx;
+    width: 324rpx;
+    height: 268rpx;
+    box-sizing: border-box;
+}
+
+.other > view  image:nth-child(2n) {
+    margin-right: 0;
+}
+.other > view  image:nth-child(3n) {
+    margin-right: 42rpx;
+}

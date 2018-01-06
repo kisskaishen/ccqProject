@@ -1,0 +1,19 @@
+<!--pages/detail/discountPay.wxml-->
+<view class='container'>
+    <view class='header'>
+        <text>全店折扣：{{discount}}折</text>
+    </view>
+    <view class='body'>
+        <view>
+            <text>消费总额：</text>
+            <input type='number' placeholder='询问服务员后输入' bindinput='moneyInput'></input>
+        </view>
+        <view>
+            <text>实付款：</text>
+            <view>￥{{reallyMoney}}</view>
+        </view>
+    </view>
+    <view class='btn'>
+        <button type='warn' bindtap='toPay'>确认买单</button>
+    </view>
+</view>

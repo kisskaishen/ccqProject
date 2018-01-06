@@ -1,0 +1,141 @@
+/* pages/recharge/index.wxss */
+
+.container {
+    color: #333;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 280rpx;
+    overflow: hidden;
+    background-color: #f3a03c;
+    font-size: 28rpx;
+}
+
+.bgHeader {
+    position: absolute;
+    display: block;
+    width: 584rpx;
+    left: 50%;
+    margin-left: -297rpx;
+    top: 60rpx;
+}
+
+.bgHeader image {
+    width: 100%;
+    height: 248rpx;
+}
+
+.headerBody {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 90rpx;
+    padding-top: 110rpx;
+}
+
+.headerBody view {
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.headerBody .littleIcon {
+    width: 44rpx;
+    height: 34rpx;
+}
+
+.body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 30rpx;
+    background-color: #fff;
+}
+
+.body > view {
+    padding: 0 30rpx;
+    border-bottom: 1rpx solid #dcdcdc;
+}
+
+.bodyTitle {
+    padding: 0 30rpx;
+    line-height: 60rpx;
+}
+
+.bodyBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bodyClass {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 128rpx;
+}
+
+.bodyClass view:nth-child(1) {
+    margin-right: 10rpx;
+}
+
+.bodyClassTxt {
+    color: #929292;
+    font-size: 28rpx;
+}
+
+.bodyContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bodyContent .bodyContentList {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 88rpx;
+    color: #444;
+    border-bottom: 1rpx solid #dcdcdc;
+}
+
+.bodyContentList view:nth-child(1) {
+    flex: 4;
+}
+
+.bodyContentList view:nth-child(2) {
+    flex: 1;
+}
+
+.bodyContentList view:nth-child(3) {
+    flex: 6;
+}
+
+.bodyContentList view:nth-child(4) {
+    position: relative;
+    flex: 6;
+    color: #f7a213;
+}
+
+.bodyContentList view:nth-child(4) image {
+    position: absolute;
+    right: 10rpx;
+    top: -24rpx;
+    width: 40rpx;
+    height: 40rpx;
+    z-index: 9;
+}
+
+.bodyContentList view:nth-child(5) {
+    flex: 4;
+}
+
+.bodyContentList view:nth-child(5) button {
+    color: #f7a213;
+    border: 1rpx solid #f7a213;
+    float: right;
+    padding: 0 20rpx;
+}

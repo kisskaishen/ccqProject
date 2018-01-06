@@ -1,0 +1,43 @@
+<!--pages/center/bindTel.wxml-->
+<view class="container">
+    <view class="section">
+        <view class="section_title">输入手机号码</view>
+        <input name="userName" type="number" placeholder="请输入手机号" value="{{userName}}" bindblur="userNameBlur" />
+    </view>
+    <view class="section">
+        <view class="section_title">验证码</view>
+        <input name="captcha" type="number" placeholder="请输入验证码" value="{{captcha}}" bindinput="bindCaptcha" />
+        <button size="mini" class="{{is_show?'show':'hide'}}" bindtap="sendCode">{{sendCodeText}}</button>
+        <button size="mini" class="{{is_show?'hide':'show'}}" style="border:none" disabled="disabled">发送短信中...({{last_time}}S)</button>
+    </view>
+    <view class="loginBtn">
+        <button bindtap="loginBtnClick">确定</button>
+    </view>
+    
+</view>
+ <view class="layerBg {{isLayerSuccess?'hide':'show'}}">
+    <view class="layerTip">
+        <view>您的会员账号：{{userName}} 已成功关联了手机号码{{userName}}</view>
+        <view>您以后可以使用手机短信的方式登录到我们的餐餐抢平台</view>
+        <view class="startBtn" bindtap="startIndex">
+            <image src='/image/center_smile.png' class='icon'></image>
+            <text>我们开始新的旅程</text>
+        </view>
+    </view>
+</view>
+<view class="layerBg {{isLayerFail?'hide':'show'}}">
+    <view class="layerTip">
+        <view>手机号码：{{userName}}已经关联到会员账号：{{hasMemberName}},你是否想要解除关联？并把手机号码关联到现在的会员账号上？</view>
+        <view>解除关联后会员账号：{{hasMemberName}}，只能使用账号和密码登录</view>
+        <view>
+            <button size='mini' bindtap='onOtherTel'>关联其他手机号码</button>
+            <button size='mini' type='primary' bindtap='onNowTel'>关联当前账号</button>
+        </view>
+        <!-- <view class="startBtn" bindtap="startIndex">
+            <image src='/image/center_smile.png' class='icon'></image>
+            <text>我们开始新的旅程</text>
+        </view> -->
+    </view>
+</view> 
+<!-- <view class='againTxt'  bindtap='againGetUserInfo'>获取不到验证码？点这里</view> -->
+

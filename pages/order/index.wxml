@@ -1,0 +1,52 @@
+<!--pages/order/index.wxml-->
+<view class="container">
+    <view class="header">
+        <view class="header_title">我的订单</view>
+        <view class="header_content">
+            <view data-num="2" class="{{_num==2?'curr':''}}" bindtap="headerClick">待付款</view>
+            <view data-num="3" class="{{_num==3?'curr':''}}" bindtap="headerClick">待使用</view>
+            <view data-num="4" class="{{_num==4?'curr':''}}" bindtap="headerClick">待评价</view>
+            <view data-num="1" class="{{_num==1?'curr':''}}" bindtap="headerClick">查看全部</view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="list" wx:for="{{list}}" wx:key="item.order_id">
+            <view class="list_title">订单号：{{item.order_sn}}</view>
+            <view class="list_content">
+                <view class="list_image">
+                     <navigator url='/pages/detail/index?goods_id={{item.goods_id}}'>
+                        <image src="{{item.goods_image}}"></image> 
+                     </navigator>
+                </view>
+                <view class="list_info">
+                    <view>商家名：{{item.store_name}}</view>
+                    <view>{{item.goods_list[0].goods_name}}</view>
+                    <view>订单时间：{{item.add_time}}</view>
+                    <view wx:if="{{item.payment_time != 0}}">付款时间：{{item.payment_time}}</view>
+                    <view>订单金额：{{item.order_amount}}元</view>
+                </view>
+            </view>
+            <view class="list_footer">
+                <view>餐餐抢券码：{{item.check_number}}</view>
+                <view wx:if="{{item.order_state == 10 }}" class='order_status'>
+                    <button size="mini" class="deleteBtn" bindtap='deleteOrder' data-id='{{item.order_id}}'>删除订单</button>
+                    <button size="mini" class="payBtn" style='margin-left:20rpx;' data-goods_id='{{item.goods_list[0].goods_id}}' data-order_sn='{{item.order_sn}}' data-goods_amount="{{item.goods_amount}}" bindtap='toPay'>去付款</button>
+                </view>
+                <view wx:elif="{{item.order_state == 20 && item.union_type != 3}}" class='order_status'>
+                    <navigator url='/pages/order/detail?order_id={{item.order_id}}'>
+                        <button size="mini" class="watchBtn">查看 </button>
+                    </navigator>
+                </view>
+                <view wx:elif="{{item.order_state == 20 && item.union_type == 3}}" class='order_status'>
+                    <navigator url='/pages/order/detail?order_id={{item.order_id}}'>
+                        <button size="mini" class="watchBtn">查看</button>
+                    </navigator>
+                </view>
+                <view wx:elif="{{item.order_state == 40 && item.evaluation_state == 0}}" class='order_status'>
+                    <button size="mini" class="againPayBtn" data-goods_id='{{item.goods_list[0].goods_id}}' bindtap='buyAgain'>再抢一次</button>
+                    <button size="mini" class="payBtn" style='margin-left:20rpx;'>去评价</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

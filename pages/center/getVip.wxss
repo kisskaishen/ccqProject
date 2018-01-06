@@ -1,0 +1,16 @@
+/* pages/center/getVip.wxss */
+.container {
+    padding-top: 192rpx;
+}
+image {
+    width: 664rpx;
+    height: 344rpx;
+}
+button {
+    width: 664rpx;
+    height: 88pr;
+    line-height: 88rpx;
+    background-color: #dd464a;
+    color: #fff;
+    margin-top: 176rpx;
+}

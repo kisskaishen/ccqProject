@@ -1,0 +1,53 @@
+<!--pages/recharge/index.wxml-->
+<view class='container'>
+    <view class='header'>
+        <view class='bgHeader'>
+            <image class='headerBg' src='/image/rechargeBg.png'></image>
+        </view>
+        <view class='headerBody'>
+            <view>
+                <image src='/image/recharge1.png' class='littleIcon'></image>
+                <text>{{userInfo.member_name}}</text>
+            </view>
+            <view></view>
+            <view>有效期至：</view>
+            <view>{{userInfo.vip_time}}</view>
+        </view>
+    </view>
+    <view class='body'>
+        <view class='bodyTitle'>会员特权</view>
+        <view class='bodyBody'>
+            <view class='bodyClass'>
+                <view>
+                    <image src='/image/recharge2.png' class='icon'></image>
+                </view>
+                <view>
+                    <view>VIP专区</view>
+                    <view class='bodyClassTxt'>VIP专享折扣区域</view>
+                </view>
+            </view>
+            <view class='bodyClass'>
+                <view>
+                    <image src='/image/recharge3.png' class='icon'></image>
+                </view>
+                <view>
+                    <view>餐餐抢资格</view>
+                    <view class='bodyClassTxt'>低价购买折扣券</view>
+                </view>
+            </view>
+        </view>
+        <view class='bodyContent'>
+            <view class='bodyContentList' wx:for="{{list}}" wx:key="item.mon">
+                <view>{{item.mon}}</view>
+                <view>|</view>
+                <view>{{item.price}}元</view>
+                <view>{{item.gift}}
+                    <image src='/image/super.png' wx:if="{{item.gift == '终身vip会员'}}"></image>
+                </view>
+                <view>
+                    <button size='mini' plain data-total="{{item.num}}" data-price="{{item.price}}" bindtap='toPay'>{{item.button}}</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

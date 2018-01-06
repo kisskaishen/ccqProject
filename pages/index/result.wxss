@@ -1,0 +1,100 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 20rpx 0;
+    background-color: #333;
+}
+
+.searchView {
+    position: relative;
+}
+
+.iconSearch {
+    position: absolute;
+    right: 0;
+    top: 14rpx;
+}
+
+.searchView view {
+    width: 606rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #333;
+    margin-left: 30rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    color: #333;
+}
+
+.goods,.store {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 260rpx;
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    background-color: #fff;
+}
+.store {
+    height: 290rpx;
+}
+.body navigator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 260rpx;
+}
+.store navigator {
+    height: 290rpx;
+}
+
+.img {
+    width: 264rpx;
+    margin-left: 30rpx;
+}
+
+.img image {
+    width: 222rpx;
+    height: 180rpx;
+}
+
+.info {
+    width: 428rpx;
+}
+
+.info view {
+    line-height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.infoName {
+    font-size: 30rpx;
+    height: 50rpx;
+}
+.ccqPrice {
+    color: #f7a213;
+}
+.ccqPrice image {
+    width: 20rpx;
+    height: 20rpx;
+}
+.ccqDiscount {
+    color: #999;
+    margin-left: 20rpx;
+}

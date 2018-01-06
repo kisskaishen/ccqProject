@@ -1,0 +1,138 @@
+/* pages/payOrder/index.wxss */
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    margin: 20rpx 0;
+    color: #333;
+    font-size: 24rpx;
+    align-items: center;
+}
+
+.header_imgae {
+    flex: 1;
+    padding-left: 36rpx;
+}
+
+.header_imgae image {
+    width: 150rpx;
+    height: 84rpx;
+}
+
+.header_info {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.header_info view {
+    line-height: 36rpx;
+}
+
+.content {
+    width: 100%;
+    color: #333;
+    font-size: 30rpx;
+}
+
+.goods {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 30rpx 36rpx;
+    align-items: center;
+}
+
+.goods_image image {
+    width: 216rpx;
+    height: 236rpx;
+}
+
+.goods_info {
+    margin-left: 14rpx;
+}
+
+.buy {
+    display: flex;
+    flex-direction: column;
+    margin: 20rpx 0;
+    background-color: #fff;
+}
+
+.buy > view {
+    height: 72rpx;
+    line-height: 72rpx;
+    padding: 0 36rpx;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1rpx solid #dadada;
+}
+
+.buy > view view {
+    flex: 1;
+}
+
+.buy > view view:nth-child(1) {
+    text-align: left;
+}
+
+.buy > view view:nth-child(2) {
+    font-size: 26rpx;
+    text-align: right;
+}
+
+.payType {
+    position: relative;
+    text-align: right !important;
+    margin-right: 30rpx;
+}
+
+.payType::after {
+    position: absolute;
+    content: '';
+    right: -30rpx;
+    top: 24rpx;
+    width: 20rpx;
+    height: 20rpx;
+    border-right: 1rpx solid #666;
+    border-top: 1rpx solid #666;
+    transform: rotate(45deg);
+}
+
+.bindTelTip {
+    height: 74rpx;
+    line-height: 74rpx;
+    background-color: #f7a213;
+    font-size: 22rpx;
+    color: #fff;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 88rpx;
+    line-height: 88rpx;
+    background-color: #fff;
+}
+
+.footerView {
+    display: flex;
+    flex: row;
+    justify-content: flex-end;
+}
+
+.footerView text {
+    font-size: 30rpx;
+    color: #333;
+    margin-right: 10rpx;
+}
+
+.footerView view {
+    padding: 0 56rpx;
+    font-size: 26rpx;
+    background-color: #f7a213;
+}

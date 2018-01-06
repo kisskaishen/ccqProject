@@ -1,0 +1,23 @@
+<!--pages/index/search.wxml-->
+<view class='container'>
+    <view class='header'>
+        <view class='headerBg'>
+            <picker value='{{type}}' range='{{typeRange}}' bindchange='typeChange'>{{typeRange[type]}}</picker>
+            <input confirm-type='搜索' focus bindinput='bindInputValue'></input>
+        </view>
+        <view class='searchBtn' bindtap='searchBtn'>搜索</view>
+    </view>
+    <view class='content'>
+        <view class='contentTitle'>热门搜索</view>
+        <view class='contentList'>
+            <view bindtap='searchGoods' data-title='{{item.title}}' wx:for="{{searchInfo}}" wx:key="item.title">{{item.title}}</view>
+        </view>
+    </view>
+
+    <!-- <view class='content history'>
+        <view class='contentTitle'>历史搜索</view>
+        <view class='contentList'>
+            <view bindtap='searchGoods' wx:for="{{historyValue}}" wx:key="item">{{item}}</view>
+        </view>
+    </view> -->
+</view>

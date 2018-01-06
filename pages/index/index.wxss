@@ -1,0 +1,201 @@
+/**index.wxss**/
+
+.container {
+    background-color: #363636;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 20rpx 0;
+    background-color: #fff;
+}
+
+.cityView {
+    position: relative;
+    width: 160rpx;
+    text-indent: 14rpx;
+    font-size: 24rpx;
+    color: #333;
+}
+.cityView .icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+.searchView {
+    position: relative;
+}
+
+.search {
+    position: absolute;
+}
+
+.searchView view {
+    width: 510rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #848382;
+    background-color: #383838;
+    border-radius: 60rpx;
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    position: relative;
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 48rpx;
+}
+
+.title .line {
+    position: absolute;
+    width: 60rpx;
+    height: 1px;
+    top: 22rpx;
+    background-color: #fff;
+}
+
+.title .lineFl {
+    left: 188rpx;
+}
+
+.title .lineFr {
+    right: 188rpx;
+}
+
+.condition {
+    display: flex;
+    flex-direction: row;
+    height: 60rpx;
+    font-size: 30rpx;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.condition > view {
+    width: 180rpx;
+}
+.condition .icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.content {
+    width: 100%;
+}
+
+.goodsImg {
+    position: relative;
+    height: 426rpx;
+    background-color: #f2f2f2;
+}
+
+.goodsImg .discount {
+    position: absolute;
+    left: 30rpx;
+    top: 0;
+    width: 72rpx;
+    height: 80rpx;
+    
+}
+.goodsImg .discountTxt {
+    position: absolute;
+    top: 44rpx;
+    left: 30rpx;
+    font-size: 24rpx;
+    width: 72rpx;
+    height: 80rpx;
+}
+
+.goodsImg image {
+    margin-top: 26rpx;
+}
+
+.goodsImg .goodsGift {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-indent: 30rpx;
+    text-align: left;
+    color: #333;
+    font-size: 30rpx;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.goodsInfo {
+    display: flex;
+    flex-direction: row;
+    padding: 14rpx 30rpx;
+    text-align: left;
+    font-size: 24rpx;
+    color: #999a9a;
+}
+
+.goodsInfo .infoFl {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.goodsInfo .infoFl > view {
+    line-height: 34rpx;
+}
+
+.goodsInfo .infoFl text {
+    margin-right: 24rpx;
+}
+
+.goodsInfo .infoFr {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.goodsInfo .infoFr > view:nth-child(1) {
+    flex: 2;
+}
+
+.goodsInfo .infoFr > view:nth-child(2) {
+    flex: 1;
+}
+
+.goodsInfo .infoFr button {
+    position: relative;
+    height: 50rpx;
+    line-height: 50rpx;
+    background-color: #f7a213;
+    color: #fff;
+    padding-left: 20rpx;
+    font-size: 32rpx;
+}
+
+.goodsInfo .infoFr button::before {
+    position: absolute;
+    content: '';
+    right: 16rpx;
+    top: 10rpx;
+    border-bottom: 16rpx solid transparent;
+    border-top: 16rpx solid transparent;
+    border-left: 24rpx solid #fff;
+}
+
+.iconSearch {
+    position: absolute;
+    right: 0rpx;
+    top: 16rpx;
+    z-index: 9;
+}

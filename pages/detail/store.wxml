@@ -1,0 +1,85 @@
+<!--pages/detail/store.wxml-->
+<view class="container">
+    <view class='header'>
+        <view class='storeImg'>
+            <image src='{{storeInfo.slides[0]}}'></image>
+        </view>
+        <view class='recommendInfo'>最新上架</view>
+    </view>
+    <view class='storeInfo'>
+        <view class='storeInfoFl'>
+            <view class='redu'>
+                <view>抢餐热度
+                    <block wx:for="{{ccqStarNum}}" wx:key="{{ccqStarNum}}">
+                        <image src="/image/star.png" class='starIcon'></image>
+                    </block>
+                </view>
+            </view>
+            <view>
+                <text>已售：{{storeInfo.sold_out}}</text>
+                <text>抢餐人气点：{{storeInfo.popularity}}点</text>
+            </view>
+            <view class=''>服务电话：{{storeInfo.live_store_tel}}
+                <image src='/image/detailTel.png' style='margin-left:30rpx;' wx:if="{{storeInfo.live_store_tel}}" class='littleIcon' bindtap='toTel'></image>
+            </view>
+            <view class=''>地址：{{storeInfo.store_address}}</view>
+        </view>
+        <view class='storeInfoFr'>
+            <navigator url='/pages/detail/discountPay?discount={{storeInfo.union_pay_discount}}&store_name={{storeInfo.store_name}}&store_id={{store_id}}'>
+                <button size='mini' wx:if="{{storeInfo.union_pay == 1}}">快捷买单</button>
+            </navigator>
+
+        </view>
+    </view>
+    <view class='storeEvaluate'>
+        <view>
+            <navigator url=''>
+                <image class='littleIcon' src='/image/centerActive.png'></image>
+                <text>用户评价</text>
+            </navigator>
+        </view>
+        <view class='evaluateNum'>
+            <navigator url='/pages/detail/eval?store_id={{store_id}}'>
+                <text bindtap='seeEval'>{{storeInfo.goods_eva}}条评论</text>
+            </navigator>
+        </view>
+    </view>
+
+    <view class='storeIntroduce'>
+        <view>
+            <text>商家图文介绍</text>
+            <navigator url='/pages/detail/moreImage?store_id={{store_id}}' class='moreImg'>更多</navigator>
+        </view>
+        <view>
+            <block wx:for="{{storeInfo.photo}}" wx:key="{{item}}">
+                <image src='{{item}}'></image>
+            </block>
+        </view>
+    </view>
+
+    <view class='storeGoods'>
+        <view class='title'>商家推荐</view>
+        <view class='goods' wx:for="{{storeList}}" wx:key="{{item.store_id}}">
+            <navigator url='/pages/detail/index?goods_id={{item.goods_id}}'>
+                <view class='goodsImg'>
+                    <view class='discount'>
+                        <image class='icon' src='/image/discount.png'></image>
+                        <text>{{item.discount}}折</text>
+                    </view>
+                    <image src='{{item.goods_image}}'></image>
+                </view>
+                <view class='goodsInfo'>
+                    <view class='goodsName'>{{item.goods_name}}</view>
+                    <view class='goodsCcqPrice'>餐餐抢券后：{{item.goods_price}}</view>
+                    <view>原价：{{item.goods_marketprice}}元</view>
+                    <view>
+                        <text class='dian'>店</text>
+                        <text>{{item.store_name}}</text>
+                    </view>
+                    <view>地址：{{item.store_address}}</view>
+                </view>
+            </navigator>
+
+        </view>
+    </view>
+</view>

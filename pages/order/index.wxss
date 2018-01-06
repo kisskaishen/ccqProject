@@ -1,0 +1,139 @@
+/* pages/order/index.wxss */
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.header_title {
+    width: 100%;
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 60rpx;
+    border-bottom: 1rpx solid #dcdcdc;
+}
+
+.header_content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 28rpx;
+    line-height: 56rpx;
+}
+
+.header_content view {
+    width: 25%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.list {
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    color: #333;
+    padding: 10rpx 30rpx;
+    font-size: 28rpx;
+    border-top: 1rpx solid #dadada;
+    border-bottom: 1rpx solid #dadada;
+}
+
+.list_title {
+    border-bottom: 1rpx solid #dadada;
+}
+
+.list_content {
+    display: flex;
+    flex-direction: row;
+    margin: 12rpx 0 24rpx 0;
+}
+
+.list_image {
+    flex: 2;
+}
+
+.list_image image {
+    width: 198rpx;
+    height: 142rpx;
+}
+
+.list_info {
+    flex: 4;
+    line-height: 34rpx;
+    font-size: 24rpx;
+    padding-left: 20rpx;
+}
+
+.list_info view:nth-child(1) {
+    font-size: 26rpx;
+}
+
+.list_info view:nth-child(2) {
+    font-size: 28rpx;
+}
+
+.list_status {
+    flex: 1;
+    padding-top: 30rpx;
+    text-align: right;
+    color: #f9384a;
+}
+
+.list_footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.list_footer view:nth-child(1) {
+    flex: 6;
+    color: #aeaeae;
+    font-size: 30rpx;
+}
+
+.list_footer .order_status {
+    display: flex;
+    flex-direction: row;  
+    justify-content: flex-end;  
+    /* flex: 4; */
+}
+.list_footer .order_status view {
+    flex: 1;
+    
+}
+
+
+
+.list_footer button {
+    width: 130rpx;
+    padding: 0;
+    color: #fff;
+}
+
+.deleteBtn {
+    background-color: #f9384a;
+}
+
+.payBtn {
+    background-color: #f7a314;
+}
+
+.watchBtn {
+    background-color: #f7a314;
+}
+
+.againPayBtn {
+    background-color: #2fa818;
+}
+
+.curr {
+    border-bottom: 1px solid #f7a213;
+    color: #e4393c;
+}

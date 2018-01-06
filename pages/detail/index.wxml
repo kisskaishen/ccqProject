@@ -1,0 +1,204 @@
+<!--pages/detail/index.wxml-->
+<view class="container">
+    <view class="content">
+        <view class="goodsImg">
+            <image class="goodsPhoto" src="{{imageInfo}}"></image>
+            <view class="goodsGift">
+                <text>库存剩下：{{goodsInfo.goods_storage}}张</text>
+            </view>
+        </view>
+        <view class="goodsInfo">
+            <view class="infoFl">
+                <view>
+                    <text style="font-size:32rpx;color:#fff;">已售：{{goodsInfo.goods_salenum}}</text>
+                </view>
+                <view style="font-size:28rpx;">
+                    <text>原价：{{goodsInfo.goods_marketprice}}元</text>
+                    <text style="color:#f39800">餐餐抢券后：{{goodsInfo.goods_price}}元</text>
+                </view>
+                <view>
+                    <view class="starStyle">
+                        餐餐抢推荐星级：
+                        <text style="display:none">{{ccqStar}}</text>
+                        <block wx:for="{{ccqStarNum}}" wx:key="{{ccqStarNum}}">
+                            <image src="/image/star.png"></image>
+                        </block>
+                        <image src="/image/halfStar.png" wx:if="{{ccqStar!=ccqStarNum}}"></image>
+                    </view>
+                </view>
+                <view>
+                    <text>地址：{{storeInfo.live_store_address}}</text>
+                </view>
+                <view>
+                    <text>此商品不支持退款</text>
+                </view>
+            </view>
+            <view class="infoFr">
+                <view></view>
+                <view>
+                    <navigator url="/pages/payOrder/index?goods_id={{goodsId}}">
+                        <button size="mini">马上抢券</button>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <view class="goods">
+            <view class="section" style="margin-bottom:20rpx;">
+                <view class="section_title">餐餐券使用说明</view>
+                <view class="section_content">
+                    <view class="sectionFl">
+                        <view class="section_content_view">购买餐餐抢券</view>
+                        <view class="section_content_view">到商家门店并出示餐餐抢券</view>
+                        <view class="section_content_view">开始享受无与伦比的福利吧</view>
+                    </view>
+                    <view class="sectionFr">
+                        <view></view>
+                        <!-- <view style="color: #18a1c8;">
+                            <navigator url="/pages/detail/help">点我有更详细帮助</navigator>
+                        </view> -->
+                    </view>
+                </view>
+            </view>
+
+            <view class="section">
+                <view class="section_content">
+                    <view class="sectionFl">
+                        <view>
+                            <image class="littleIcon" src='/image/centerActive.png'></image>
+                            <text style="font-size:30rpx;">用户评价</text>
+                        </view>
+                    </view>
+                    <view class="sectionFr">
+                        <navigator url='/pages/detail/eval?goods_id={{goodsInfo.goods_id}}' class="comment">{{goodsInfo.evaluation_count}}条评论</navigator>
+                    </view>
+                </view>
+            </view>
+
+            <view class="section">
+                <view class="section_title">商家信息</view>
+                <view class="section_content">
+                    <view class="sectionFl" style="flex:4;border-right:1rpx solid #dcdcdc">
+                        <navigator url='/pages/detail/store?store_id={{goodsInfo.store_id}}'>
+                            <view style="font-size:32rpx;">{{goodsInfo.store_name}}</view>
+                            <view>
+                                <text>{{storeInfo.live_store_address}}</text>
+                                <view catchtap='openMap' style='display:inline-block;'>
+                                    <image class="addressIcon" src='/image/detailAdd.png' style='margin-left:30rpx;'></image>
+                                    <text>{{storeInfo.m}}</text>
+                                </view>
+                            </view>
+                        </navigator>
+                    </view>
+                    <view class="sectionFr">
+                        <view class='telView' bindtap='toTel'>
+                            <image class="icon" src='/image/detailTel.png'></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="section">
+                <view class="section_title">商品详情</view>
+                <view class="section_content goodsDetail">
+                    <view class='sectionTitle'>
+                        <view>名称</view>
+                        <view>数量</view>
+                        <view>商家原价</view>
+                    </view>
+                    <view class="sectionFl" wx:for="{{detailInfo}}" wx:key="{{item.goods_id}}">
+                        <view>{{item.list[0].goods_name}}</view>
+                        <view>{{item.list[0].quantity}}</view>
+                        <view>{{item.list[0].goods_costprice}}
+                            <text wx:if="{{item.goods_union_price}}">元</text>
+                        </view>
+                    </view>
+
+                </view>
+            </view>
+
+            <view class="section">
+                <view class="section_title">
+                    <image class="littleIcon" src='/image/detailtip.png'></image>商品使用说明</view>
+                <view class="section_content" style="padding:18rpx 30rpx 80rpx">
+                    <view class="sectionFl">
+                        <view>每人每桌，仅限使用一张</view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="section">
+                <view class="section_title">
+                    <image class="littleIcon" src='/image/center_Smile.png'></image>购买须知
+                </view>
+                <view class="section_content">
+                    <view class="sectionFl shuomingtext">
+                        <view class='otherTitle'>餐餐抢券使用时间</view>
+                        <view class='otherTxt'>购买其一个月内有效</view>
+                        <view class='otherTitle'>有效期</view>
+                        <view class='otherTxt' wx:if="{{otherInfo.validity}}">{{otherInfo.validity}}</view>
+                        <view class='otherTxt' wx:else>{{otherInfo.valid_start_time}}-{{otherInfo.valid_end_time}}</view>
+                        <view class='otherTitle'>商家提供消费时间</view>
+                        <view class='otherTxt'>{{otherInfo.consumption_time}}</view>
+                        <view class='otherTitle'>商家营业时间</view>
+                        <view class='otherTxt'>{{otherInfo.consumption_time}}</view>
+                        <view class='otherTitle'>相关信息</view>
+                        <view class='otherTxt'>
+                            <text wx:if="{{otherInfo.is_invoice == 0}}">不需要发票</text>
+                            <text wx:else>需要发票</text>
+                        </view>
+                        <view class='otherTxt'>
+                            <text wx:if="{{otherInfo.people == 0}}">单人餐</text>
+                            <text wx:elif="{{otherInfo.people == 1}}">双人餐</text>
+                            <text wx:else>多人餐</text>
+                        </view>
+                        <view class='otherTxt'>
+                            <text wx:if="{{otherInfo.is_order == 1}}">需要预约</text>
+                            <text wx:else>不需预约</text>
+                        </view>
+                        <view class='otherTxt'>
+                            <text wx:if="{{otherInfo.is_sex == 0}}">不限制性别</text>
+                            <text wx:elif="{{otherInfo.is_sex == 1}}">只限男生</text>
+                            <text wx:else>只限女生</text>
+                        </view>
+                        <view class='otherTxt'>
+                            <text wx:if="{{otherInfo.is_voucher == 0}}">不需要证件</text>
+                            <text wx:else>身份证</text>
+                        </view>
+                        <view class='otherTxt'>
+                            <text wx:if="{{otherInfo.unvalidity == 0}}">无不可用日期</text>
+                            <text wx:else>{{otherInfo.unvalidity}}不可用日期</text>
+                        </view>
+                        <view class='otherTxt'>注:{{otherInfo.remark}}</view>
+
+                    </view>
+                </view>
+
+                <view class="section tuijian">
+                    <view class="section_title">向你推荐其他热抢美食</view>
+                    <view class="section_content" wx:for="{{recommendList}}" wx:key="{{item.goods_id}}" style='margin-bottom:20rpx;'>
+                        <navigator url='/pages/detail/index?goods_id={{item.goods_id}}'>
+                            <view class="sectionFr" style='margin-right:30rpx;'>
+                                <image class="otherGoodsPhoto" src="{{item.goods_image}}"></image>
+                                <view class="goodsGift">
+                                    <text>库存剩下：{{item.goods_storage}}张</text>
+                                </view>
+                            </view>
+                            <view class="sectionFl otherGoods">
+                                <view style="font-size:32rpx;margin-top:26rpx;color:#333;">{{item.goods_name}}</view>
+                                <view style="font-size:30rpx;color:#e4393c;">餐餐抢价：{{item.goods_price}}元</view>
+                                <view>原价：{{item.goods_marketprice}}元</view>
+                                <view>
+                                    <text class='dian'>店</text>{{item.store_name}}</view>
+                                <view>
+                                    <image class="addressIcon" src='/image/detailAdd.png'></image>
+                                    <text class="otherAdd">{{item.store_address}}</text>
+                                    <text style="display:inline-block;margin-left:24rpx;"> {{item.distance}}</text>
+                                </view>
+                            </view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

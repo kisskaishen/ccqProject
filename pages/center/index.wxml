@@ -1,0 +1,63 @@
+<!--pages/center/index.wxml-->
+<view class="container">
+    <!-- <view class='exit'>
+        <image src='/image/exit.png' class='exit' bindtap='exitBtn'></image>
+    </view> -->
+    <view class="header">
+        <view class='headerBg'>
+            <image src='/image/center_header_bg.png'></image>
+        </view>
+        <view class="user">
+            <!-- <image src='/image/center_setting.png' class='littleIcon iconSetting'></image> -->
+            <view class="userImg">
+                <image wx:if="{{userInfo.avatarUrl}}" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+                <button wx:else class='headerBtn' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像 </button>
+            </view>
+            <view class="userInfo">
+                <view class="userName">昵称：{{userInfo.nickName}}</view>
+                <view class="memberName">会员：{{userInfo3.member_name}}</view>
+                <view class="memberName">您的手机：{{userInfo3.member_mobile}}</view>
+                <view class="memberName" wx:if="{{userInfo3.vip_time}}">VIP时间：{{userInfo3.vip_time}}</view>
+            </view>
+        </view>
+        <view class='vipBtn' wx:if="{{userInfo3.set_red_dot == 1}}">
+            <navigator url='/pages/center/getVip'>
+                <button size='mini'>点我领取Vip会员</button>
+            </navigator>
+        </view>
+        <!-- <view wx:if="{{userInfo3.member_mobile}}"></view> 
+        <view class="vipView" wx:else>
+            <image src='/image/center_smile.png' class="littleIcon iconSmile"></image>
+            <button size="mini" bindtap="bindTel">点我绑定手机有更多优惠哦</button>
+        </view> -->
+    </view>
+    <view class="body">
+        <view bindtap='toOrder'>
+            <text class="num">{{userInfo3.ccq_num}}</text>
+            <text>套餐券</text>
+        </view>
+        <view>
+            <text class="num">{{userInfo3.current_balance}}</text>
+            <text>余额</text>
+        </view>
+        <view>
+            <text class="num">{{userInfo3.current_point}}</text>
+            <text>云币</text>
+        </view>
+    </view>
+    <view class="content" wx:if="{{userInfo2.member_id}}">
+        <view class="contentLi">
+            <navigator url="/pages/recharge/index">
+                <image src='/image/center_list_vip.png' class="littleIcon iconCnterVip"></image>
+                <view>VIP续费</view>
+            </navigator>
+        </view>
+        <view class="contentLi">
+            <navigator url="/pages/order/index">
+                <image src='/image/center_list_order.png' class="littleIcon iconCnterOrder"></image>
+                <view>我的订单</view>
+            </navigator>
+        </view>
+    </view>
+    <view class='againTxt' bindtap='againGetUserInfo'>会员信息有误？点击重新获取</view>
+</view>

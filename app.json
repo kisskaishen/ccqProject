@@ -1,0 +1,56 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/center/index",
+        "pages/center/getVip",
+        "pages/order/detail",
+        "pages/index/search",
+        "pages/order/index",
+        "pages/detail/eval",
+        "pages/detail/moreImage",
+        "pages/detail/discountPay",
+        "pages/order/moreDetail",
+        "pages/center/login",
+        "pages/recharge/index",
+        "pages/detail/store",
+        "pages/index/result",
+        "pages/detail/index",
+        "pages/detail/help",
+        "pages/center/bindTel",
+        "pages/payOrder/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#1b1a20",
+        "navigationBarTitleText": "餐餐抢微信小程序",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "color": "#fff",
+        "selectedColor": "#fff",
+        "backgroundColor": "#333",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "image/index.png",
+                "selectedIconPath": "image/indexActive.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/center/index",
+                "iconPath": "image/center.png",
+                "selectedIconPath": "image/centerActive.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 5000,
+        "connectSocket": 5000,
+        "uploadFile": 5000,
+        "downloadFile": 5000
+    },
+    "debug": true
+}

@@ -1,0 +1,9 @@
+<!--pages/center/getVip.wxml-->
+<view class='container'>
+    <view>
+        <image src='/image/vipRechargeBg.png'></image>
+    </view>
+    <view>
+        <button bindtap='getBtn'>点我领取3个月VIP会员</button>
+    </view>
+</view>

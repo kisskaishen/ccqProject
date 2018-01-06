@@ -1,0 +1,53 @@
+<!--pages/payOrder/index.wxml-->
+<view class="container">
+    <view class="header">
+        <view class="header_imgae">
+            <image src="{{storeInfo.store_img}}"></image>
+        </view>
+        <view class="header_info">
+            <view>{{storeInfo.store_name}}</view>
+            <view>{{storeInfo.store_address}}</view>
+            <view>服务电话:{{storeInfo.live_store_tel}}</view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="goods">
+            <view class="goods_image">
+                <image src="{{goodsInfo.goods_image_url}}"></image>
+            </view>
+            <view class="goods_info">{{goodsInfo.goods_name}}</view>
+        </view>
+        <view class="buy">
+            <view>
+                <view>餐餐抢券数量</view>
+                <view>X{{goodsInfo.goods_num}}张</view>
+            </view>
+            <view>
+                <view>合计</view>
+                <view>￥{{goodsInfo.goods_price}}元</view>
+            </view>
+            <view>
+                <view>支付方式</view>
+                <view>微信支付</view>
+            </view>
+        </view>
+
+        <view class="buy">
+            <view wx:if="{{memberInfo.member_mobile}}">
+                <view>会员手机</view>
+                <view>{{memberInfo.member_mobile}}</view>
+            </view>
+            <view wx:else class="bindTelTip">
+                <view bindtap='toBindTel'>
+                    <navigator url="/pages/center/bindTel">根据工信部要求，线上服务必须绑定手机号码，点我绑定手机</navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='footer'>
+        <view class='footerView'>
+            <text>订单金额￥{{goodsInfo.goods_price}}元</text>
+            <view bindtap='toPay' data-goods_amount="{{goodsInfo.goods_amount}}">去付款</view>
+        </view>
+    </view>
+</view>

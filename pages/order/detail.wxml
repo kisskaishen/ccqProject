@@ -1,0 +1,24 @@
+<!--pages/order/detail.wxml-->
+<view class='container'>
+    <view class='content'>
+        <view class='header'>
+            <navigator url='/pages/detail/store?store_id={{orderInfo.store_id}}'>
+                <view>
+                    <image src='/image/orderStore.png'></image>
+                </view>
+                <view class='header_name'>{{orderInfo.store_name}}</view>
+            </navigator>
+        </view>
+        <view class='body'>
+            <view>验证码：{{orderInfo.check_number}}</view>
+            <view>有效期：{{orderInfo.validity}}</view>
+            <view>
+                <image src='{{orderInfo.check_number_img}}'></image>
+            </view>
+        </view>
+        <view class='footer'>
+            <button type='primary' bindtap='toIndex'>返回首页</button>
+            <button type='warn' bindtap='toOrder'>我的订单</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,47 @@
+/* pages/detail/eval.wxss */
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 84rpx;
+    background-color: #fff;
+    color: #333;
+    font-size: 30rpx;
+    text-align: center;
+}
+.header > view {
+    flex: 1;
+}
+.body {
+    width:100%;
+}
+.body .list {
+    margin-top:20rpx;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    color: #333;
+    font-size: 30rpx;
+    padding: 30rpx 30rpx 20rpx;
+}
+.list > view {
+    line-height: 52rpx;
+}
+.listTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 32rpx;
+    line-height: 56rpx;
+}
+.goodsImg {
+    width: 154rpx;
+    height: 130rpx;
+    border:1rpx solid #ccc;
+}
+.curr {
+    color: #e4393c;
+}

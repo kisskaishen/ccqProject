@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- 头部--搜索框和地区选择 -->
+    <view class="header">
+        <view class="cityView">
+            <picker mode="selector" range="{{cityRange}}" value="cityIndex" range-key="{{'title'}}" bindchange="changeCity">
+                <view class="{{isCity?'hide':'show'}}">
+                    <text>{{cityRange[cityIndex].title}}</text>
+                    <image src='/image/iconMore.png' class='icon '></image>
+                </view>
+                <view class="{{isCity?'show':'hide'}}">
+                    <text>{{nowCity}}</text>
+                    <image src='/image/iconMore.png' class='icon'></image>
+                </view>
+            </picker>
+        </view>
+        <view class="searchView">
+            <!-- <input type="text" placeholder="搜出你想要的" /> -->
+            <view bindtap="bindSearch">搜出你想要的</view>
+            <icon type="search" class="icon iconSearch" size="16" />
+        </view>
+    </view>
+    <!-- 商品列表 -->
+    <!-- <scroll-view style="height:{{windowH}}px;" scroll-y="true" enable-back-to-top="true" bindscrolltolower="scrollBottom"> -->
+        <view class="body">
+            <view class="title">
+                <view class="line lineFl"></view>
+                <view class="lineText">附近商品</view>
+                <view class="line lineFr"></view>
+            </view>
+            <!-- <view class="condition">
+                <view>
+                    <picker mode="selector" range="{{foodRange}}" value="foodIndex" bindchange="changeFood">
+                        <view>{{foodRange[foodIndex]}}
+                            <image src='/image/iconMore2.png' class='icon'></image>
+                        </view>
+                    </picker>
+                </view>
+                <view>综合排序</view>
+                <view>销量最高</view>
+                <view>距离最近</view>
+            </view> -->
+            <view class="content">
+                <block wx:for="{{goods}}" wx:key="{{item.goods_id}}">
+                    <view class="contentItem">
+                        <navigator url="/pages/detail/index?goods_id={{item.goods_id}}">
+                            <view class="goodsImg">
+                                <image src='/image/discount.png' class="discount"></image>
+                                <text class='discountTxt'>{{item.discount}}折</text>
+                                <image class="goodsPhoto" src="{{item.goods_image}}"></image>
+                                <view class="goodsGift">{{item.goods_name}}</view>
+                            </view>
+                            <view class="goodsInfo">
+                                <view class="infoFl">
+                                    <view style="margin-bottom:10rpx;">
+                                        <text style="font-size:32rpx;font-weight:bold;color:#fff">{{item.store_name}}</text>
+                                    </view>
+                                    <view>
+                                        <text style="color:#f39800">餐餐抢优惠价：{{item.goods_price}}元</text>
+                                        <text>门店价格：{{item.goods_marketprice}}元</text>
+                                    </view>
+                                    <view>
+                                        <text>已售：{{item.goods_salenum}}</text>
+                                        <text>浏览量：{{item.goods_click}}</text>
+                                        <text>月售：{{item.month_sale}}</text>
+                                    </view>
+                                    <view>
+                                        <text>说明：不限日期，每人只能一张</text>
+                                    </view>
+                                    <view>
+                                        <text>地址：{{item.store_address}}</text>
+                                    </view>
+                                </view>
+                                <view class="infoFr">
+                                    <view>{{item.distance_value}}</view>
+                                    <view>
+                                        <button size="mini">一元抢</button>
+                                    </view>
+                                </view>
+                            </view>
+                        </navigator>
+                    </view>
+                </block>
+
+            </view>
+        </view>
+    <!-- </scroll-view> -->
+</view>
